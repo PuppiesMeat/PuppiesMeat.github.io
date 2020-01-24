@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta name="author" content="董沅鑫, yuanxin.me@gmail.com">
+  
+  
+  
+  <title>Mr He</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Hexo, theme-bmw">
+  
+
+  <script>
+    console.log('\n%c Hexo-theme-bmw v4.0 ' + '%c 🎉 https://github.com/dongyuanxin/theme-bmw 🎉\n' + '\n%c View demo online ' + '%c 🔍 https://godbmw.com/ 🔍  \n' , 'color: #fadfa3; background: #030307; padding:3px 0;', '', 'color: #fadfa3; background: #030307; padding:3px 0;', '');
+  </script>
+
+  
+    <meta name="description" content="Loneliness is a normal state of life">
+  
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/icon/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+
+  <script src="/js/util.js"></script>
+<script src="/js/valine.min.js"></script>
+
+  
+
+  
+    <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" async></script>
+  
+
+  
+    <link href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css" rel="stylesheet">
+  
+  
+  <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js" async></script>
+  
+  
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
+  
+
+</head>
+
+
+  <body>
+
+    
+
+    <div id="app">
+
+      <div class="header-wrap">
+  <header>
+    <div class="site-brand">
+      <div class="site-title">
+        <a href="/">ShunHe</a>
+      </div>
+    </div>
+    <nav class="site-navigation">
+      <ul class="nav-menu">
+      
+        <li class="nav-item" data-path="/">
+          
+            <a 
+              href="/"
+              target="_self"
+            >
+              主页
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          
+            <a 
+              href="/archives/"
+              target="_self"
+            >
+              归档
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          
+            <a 
+              href="/categories/"
+              target="_self"
+            >
+              分类
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          
+            <a 
+              href="/tags/"
+              target="_self"
+            >
+              标签
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          
+            <a 
+              href="/friends/"
+              target="_self"
+            >
+              友链
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          
+            <a 
+              href="/about/"
+              target="_self"
+            >
+              关于
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="">
+          
+            <a href="javascript:void(0);" v-else>抓到我</a>
+            <ul class="nav-menu--dropdown">
+              
+                <li>
+                  <a 
+                    href="https://github.com/PuppiesMeat" 
+                    target="_blank"
+                  >
+                    Github
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+      
+      </ul>
+    </nav>
+    <i class="iconfont icon-menu"></i>
+  </header>
+</div>
+
+<script>
+  let links = document.querySelectorAll('.nav-item');
+  for(let link of links){
+    let childrenLink = link.querySelector('ul');
+    link.addEventListener('mouseenter', () => {
+      if(childrenLink) {
+        childrenLink.className = "nav-menu--dropdown active";
+      }
+    })
+    link.addEventListener('mouseleave', () => {
+      if(childrenLink) {
+        childrenLink.className = "nav-menu--dropdown";
+      }
+    })
+  }
+  let rootRealPath = getRealPath(window.location.pathname, true);
+  for(let link of links) {
+    let linkPath = link.getAttribute("data-path");
+    if(linkPath && getRealPath(linkPath, true) === rootRealPath) {
+      link.className = "nav-item hover";
+    }
+  }
+
+  let iconMenu = document.querySelector("i.iconfont.icon-menu"),
+    iconMenuClicked = false;
+  let navDOM = document.querySelector("nav.site-navigation");
+  iconMenu.addEventListener("click", () => {
+    iconMenuClicked 
+      ? navDOM.className = "site-navigation active"
+      : navDOM.className = "site-navigation";
+    iconMenuClicked = !iconMenuClicked;
+  })
+</script>
+
+      
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
+  
+
+<div class="post">
+  <h1 class="article-title">
+    <span></span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2020-01-24
+    </span>
+    
+    
+      <span>
+        浏览 : <span class="article-timer" data-identity="thread"></span>
+      </span>
+    
+  </div>
+
+  
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <hr>
+<h2 id="title-线程"><a href="#title-线程" class="headerlink" title="title: 线程"></a>title: 线程</h2><div class="output_wrapper" id="output_wrapper_id" style="font-size: 16px; color: rgb(62, 62, 62); line-height: 1.6; word-spacing: 0px; letter-spacing: 0px; font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;"><p class="toc" id="tocid_0" style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; margin-left: 25px;"><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#h" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">多线程与线程优化</a></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#hcpu" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">CPU核心数与线程数的关系</a></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#h-1" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">多核心</a></span></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#hsimultaneousmultithreadingsmt" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">多线程 Simultaneous Multithreading.简称SMT</a></span></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#h-2" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">核心数和线程数</a></span></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#hcpu-1" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">CPU的时间片轮转机制</a></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#h-3" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">进程和线程的概念</a></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#h-4" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">并行和并发</a></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#hjava" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">Java的线程</a></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#h-5" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">线程池</a></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#h-6" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">使用线程池带来的好处</a></span></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#h-7" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">线程池工作的策略</a></span></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#h-8" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">饱和策略</a></span></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#h-9" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">阻塞队列</a></span></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#hlinkedblockingqueue" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">常用阻塞队列（使用最多的应该是LinkedBlockingQueue）</a></span></span></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#h-10" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">合理配置线程池</a></span></span></span></span><span class="toc_item" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: block;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><span class="toc_left" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-left: 25px;"><a href="#hasynctask" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">AsyncTask</a></span></span></span></p><br><h1 id="h" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.6em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">多线程与线程优化</span></h1><br><h2 id="hcpu" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.4em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">CPU核心数与线程数的关系</span></h2><br><h3 id="h-1" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; border-bottom: 2px solid rgb(63, 63, 63); margin-bottom: 50px; font-size: 1em;"><span style="font-size: inherit; line-height: inherit; margin: 0px; display: inline-block; background: rgb(63, 63, 63); color: rgb(255, 255, 255); padding: 10px 16px; border-radius: 5px; box-shadow: black 5px 5px 10px;">多核心</span></h3><br><ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">多核心也就是单个芯片含有多个处理器可以同时工作也叫CMP（Chip Multiprocessor），依靠多个CPU同时并行运行计算。</span></li><br></ul><br><h3 id="hsimultaneousmultithreadingsmt" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; border-bottom: 2px solid rgb(63, 63, 63); margin-bottom: 50px; font-size: 1em;"><span style="font-size: inherit; line-height: inherit; margin: 0px; display: inline-block; background: rgb(63, 63, 63); color: rgb(255, 255, 255); padding: 10px 16px; border-radius: 5px; box-shadow: black 5px 5px 10px;">多线程 Simultaneous Multithreading.简称SMT</span></h3><br><ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">多线程通过复制处理器的结构状态，让同一个处理器上的多个线程同步执行并共享处理器的执行资源。</span></li><br></ul><br><h3 id="h-2" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; border-bottom: 2px solid rgb(63, 63, 63); margin-bottom: 50px; font-size: 1em;"><span style="font-size: inherit; line-height: inherit; margin: 0px; display: inline-block; background: rgb(63, 63, 63); color: rgb(255, 255, 255); padding: 10px 16px; border-radius: 5px; box-shadow: black 5px 5px 10px;">核心数和线程数</span></h3><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;"><code style="font-size: inherit; line-height: inherit; overflow-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0px 2px; color: rgb(233, 105, 0); background: rgb(248, 248, 248);">一般情况他们是1:1的关系，但是Intel引入了超线程技术后，可以达到1:2的关系</code></p><br><h2 id="hcpu-1" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.4em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">CPU的时间片轮转机制</span></h2><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;"><code style="font-size: inherit; line-height: inherit; overflow-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0px 2px; color: rgb(233, 105, 0); background: rgb(248, 248, 248);">CPU的时间片轮转机制让我们可以在不受CPU核心数的限制去创建线程，时间片轮转调度是一种古老、最简单、最公平且使用最广的算法，又称为RR调度。每个进程被分配一个时间段，称为它的时间片也就是这个进程能够运行的时间</code></p><br><ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">百度百科的解答</p></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;"><code style="font-size: inherit; line-height: inherit; overflow-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0px 2px; color: rgb(233, 105, 0); background: rgb(248, 248, 248);">如果在时间片结束的时候进程的执行还没有结束，那么CPU将剥夺它的运行权限，并分配给另外一个进程；如果时间片结束前进程提前结束或者阻塞，CPU也就将时间片分给其他进程。调度程序会维护一张进程列表，同时将时间片结束的进程排到任务队列的末尾</code></p></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">时间片乱转调度中唯一有趣的点是时间片的长度，从一个进程切换到另一个进程是需要耗费时间的，包括保存和装入寄存器值及内存映像，更新各种表格和队列等。所以时间片和进程切换（上下文切换）时间直接影响了效率，时间片太短那么上下文的切换就会频繁，效率就会下降，时间片设置太长也会出现并发事件无法及时响应，通常时间片设置为100ms比较合理。所以CPU不死机的情况下能够被Kill掉其实也是因为时间片轮转机制。</p></li><br></ul><br><h2 id="h-3" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.4em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">进程和线程的概念</span></h2><br><ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">进程</p><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;"><code style="font-size: inherit; line-height: inherit; overflow-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0px 2px; color: rgb(233, 105, 0); background: rgb(248, 248, 248);">进程是操作系统分配资源的最小单位，这里的资源就包括了内存、CPU、磁盘IO等。一个进程至少会包含一条线程，线程间共享进程的所有资源。</code></p></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">线程</p><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;"><code style="font-size: inherit; line-height: inherit; overflow-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0px 2px; color: rgb(233, 105, 0); background: rgb(248, 248, 248);">线程是CPU调度的最小单元，必须依赖进程存活，线程自己不拥有系统资源，只拥有一点在运行时必不可少的资源（如程序计数器、一组寄存器和栈），但是可以与同进程的其他线程共享资源。</code></p></li><br></ul><br><h2 id="h-4" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.4em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">并行和并发</span></h2><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;"><code style="font-size: inherit; line-height: inherit; overflow-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0px 2px; color: rgb(233, 105, 0); background: rgb(248, 248, 248);">并行和并发的最大区别就在于并行是同时执行，而并发是交替执行的。所以在谈论并发的时候一般会加上单位时间，比如某服务器1s内的并发量是10000，某高速公路每小时可以通过100000辆汽车等</code></p><br><ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#0000ff" size="6" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">高并发编程带来的意义</font></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">充分利用CPU的资源</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">加快用户的响应时间</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">代码模块化，异步化，简单化</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#0000ff" size="6" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">并发编程的注意事项</font></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">线程之间的安全性 同时操作同一份数据</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">线程之间的死循环 线程间的同步使用锁容易造成死锁</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">线程太多将资源耗尽造成死机 比如JVM每开一条线程都需要为这条线程分配1M的内存空间，系统的资源是有限的</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#0000ff" size="6" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">并发编程的实现方法</font></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">互斥同步（阻塞同步）如synchronize reentrantlock等</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;">非阻塞同步 乐观锁<ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">比如CAS指令，CAS指令需要三个操作数，分别是内存位置，旧的预期值，新值。CAS执行是当且仅当内存值符合旧预期值时，处理器用新值更新内存值。并且需要处理器支持CAS的原子操作。JAVA提供了UnSafe类，但是用户无法使用，除非反射。Atomic包下面包含了一些。这里带来了一个ABA问题。ABA实际不大影响，如果要解决可以改用互斥锁</span></li></ul></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">无同步方案 编写可重入的代码以及使用线程本地存储（ThreadLocal、ThreadLocalMap等）</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#ff0000" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">CAS存在的问题</font></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">ABA问题</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">循环事件长开销大，当然CPU对自旋锁会有优化</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">只能保证一个共享变量的原子操作，当然在JDK1.5开始，我们可以使用AtomicReference类来保证引用对象之间的原子性，将多个变量放在一个对象里来进行CAS操作。</span></li><br></ul><br><h2 id="hjava" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.4em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">Java的线程</span></h2><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;"><code style="font-size: inherit; line-height: inherit; overflow-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0px 2px; color: rgb(233, 105, 0); background: rgb(248, 248, 248);">Java的线程也就是API提供的Thread类，它依赖一个Runnable接口，当然如果需要获取线程运行的结果也可以用Callable和FutureTask配合来使用。</code></p><br><ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#0000ff" size="6" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">线程的状态切换</font></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">新建（New）</font> 创建后尚未启动的线程</li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">运行（Runnable）</font>处于此状态的线程有可能正在执行，也可能正在等待CPU为它分配执行时间</li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">无限期等待（Waiting）</font>处于这种状态的线程不会被分配CPU执行时间，需要等待其他线程对它唤醒，比如调用了以下函数<ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">未设置Timeout参数的Object.wait()方法</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">未设置Timeout参数的Thread.join()方法</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">LockSupport.park()方法</span></li></ul></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">限期等待（Timed Waiting）</font>处于这种状态的线程也不会被分配CPU执行时间，不过不需要等待被其他线程显示的唤醒，在一定时间之后会有系统自动唤醒。比如调用了以下方法：<ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">Thread.sleep()</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">设置了Timeout的Object.wait()</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">设置了Timeout的Thread.join()</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">LockSupport.parkNanos()</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">LockSupport.parkUntil()</span></li></ul></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">阻塞（Blocking）</font>线程被阻塞了，阻塞状态与等待状态的区别是阻塞状态在等待获取到一个排他锁，这个事件将在另外一个线程放弃这个锁的时候发生。而等待状态则是在等待一段时间，或者唤醒动作的发生。在程序等待进入同步区域的时候，线程将进入这种状态</li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">结束（Terminated）</font>已终止线程的状态</li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">一些线程方法</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">yield：Thread类方法，是当前线程让出CPU，但是让出的时间没有办法设定，也不会释放锁，而且不一定能成功</span></li><br></ul><br><h2 id="h-5" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.4em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">线程池</span></h2><br><h3 id="h-6" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; border-bottom: 2px solid rgb(63, 63, 63); margin-bottom: 50px; font-size: 1em;"><span style="font-size: inherit; line-height: inherit; margin: 0px; display: inline-block; background: rgb(63, 63, 63); color: rgb(255, 255, 255); padding: 10px 16px; border-radius: 5px; box-shadow: black 5px 5px 10px;">使用线程池带来的好处</span></h3><br><ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">降低资源消耗</font>：通过重复利用已创建的线程降低线程创建和销毁造成的消耗</li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">提高响应速度</font>：任务不再需要等待线程创建就能立即执行。</li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">提高线程的可管理型</font>：如果无限制的创建线程，可能消耗大量的系统资源，同时无法统一管理，使用线程池可以进行统一分配、调优和监控。</li><br></ul><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">线程池主要提供了<font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">ThreadPoolExecutor</font>，当然Executors下面也提供了一些各种用途的线程或者线程池，ThreadPoolExecutor类的初始化参数里面包含了核心线程数、最大线程数、KeepAlive时间、阻塞队列BlockingQueue、RejectedExecutionHandler(这里忽略了ThreadFactory参数)。</p><br><h3 id="h-7" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; border-bottom: 2px solid rgb(63, 63, 63); margin-bottom: 50px; font-size: 1em;"><span style="font-size: inherit; line-height: inherit; margin: 0px; display: inline-block; background: rgb(63, 63, 63); color: rgb(255, 255, 255); padding: 10px 16px; border-radius: 5px; box-shadow: black 5px 5px 10px;">线程池工作的策略</span></h3><br><ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">少于核心线程数创建核心线程执行</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">核心线程都在忙则加入到阻塞队列</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">阻塞队列满了则创建非核心线程（非核心线程数=参数的最大线程数-参数的核心线程数）</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">非核心线程满了还不够交给RejectedExecutionHandler来处理（这里也叫饱和策略）</span></li><br></ul><br><h3 id="h-8" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; border-bottom: 2px solid rgb(63, 63, 63); margin-bottom: 50px; font-size: 1em;"><span style="font-size: inherit; line-height: inherit; margin: 0px; display: inline-block; background: rgb(63, 63, 63); color: rgb(255, 255, 255); padding: 10px 16px; border-radius: 5px; box-shadow: black 5px 5px 10px;">饱和策略</span></h3><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">线程池一共提供了4中策略</p><br><ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">AbortPolicy：直接抛出异常，这是默认使用的策略</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">CallerRunsPolicy：用调用者所在的线程来执行任务</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">DiscardolderPolicy：丢弃阻塞队列中靠最前的任务，并执行当前任务</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">DiscardPolicy：直接丢弃任务</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">也可以根据自己的场景实现RejectedExecutionHandler接口来自己定义饱和策略</span></li><br></ul><br><h3 id="h-9" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; border-bottom: 2px solid rgb(63, 63, 63); margin-bottom: 50px; font-size: 1em;"><span style="font-size: inherit; line-height: inherit; margin: 0px; display: inline-block; background: rgb(63, 63, 63); color: rgb(255, 255, 255); padding: 10px 16px; border-radius: 5px; box-shadow: black 5px 5px 10px;">阻塞队列</span></h3><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;"><font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">队列</font>是一种特殊的线性表，特殊之处在于它只允许在表的前端进行删除操作，而在表的后端进行插入操作，和栈一样，队列是一种操作受限制的线性表。进行插入操作的端称为队尾，进行删除操作的端称为队头。队列中没有元素时称为空队列。因为队列最早插入的元素最早出队，队列又称为先进先出（FIFO)线性表。</p><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;"><font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">阻塞队列</font></p><br><ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">支持阻塞的插入方法：意思是当队列满时，队列会阻塞插入元素的线程，知道队列不满。</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">支持阻塞的移除方法：意思是在队列为空时，获取元素的线程会等待队列变为非空。</span></li><br></ul><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;"><font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">使用方法</font></p><br><ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">插入方法</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">add 抛异常， offer 返回特殊值， put 一直阻塞</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">移除方法</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">remove 抛异常， poll 返回特殊值， take 一直阻塞</span></li><br></ul><br><h4 id="hlinkedblockingqueue" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.2em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">常用阻塞队列（使用最多的应该是<strong style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; font-weight: bold;">LinkedBlockingQueue</strong>）</span></h4><br><ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">ArrayBlockingQueue：一个由数组结构组成的有界阻塞队列</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">LinkedBlockingQueue：一个由链表结构组成的有界阻塞队列</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">PriorityBlockingQueue：一个支持优先级排序的无界阻塞队列</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">DelayQueue：一个使用优先级队列实现的无界阻塞队列</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">SynchronousQueue：一个不存储元素的阻塞队列（这个队列不存储元素，和线程池配合使用如Executors.cachedThreadPool使用的就是它，由于不存储元素所以每来一个任务没有线程接收都新建一条线程去执行。当然也适合在生产者和消费者中使用）</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">LinkedTransferQueue：一个由链表结构组成的无界阻塞队列</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">LinkedBlockingDeque：一个由链表结构组成的双向阻塞队列</span></li><br></ul><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;"><font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">有界和无界的区别在于是否设定容量，这里的无界是相对的，不可能无止境的添加元素</font></p><br><h3 id="h-10" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; border-bottom: 2px solid rgb(63, 63, 63); margin-bottom: 50px; font-size: 1em;"><span style="font-size: inherit; line-height: inherit; margin: 0px; display: inline-block; background: rgb(63, 63, 63); color: rgb(255, 255, 255); padding: 10px 16px; border-radius: 5px; box-shadow: black 5px 5px 10px;">合理配置线程池</span></h3><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">配置线程池之前必须首先<font color="#ff00ff" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">分析任务特性</font>，可以从以下角度分析：</p><br><ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><font color="#ff0000" size="5" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">任务的性质：CPU密集型任务、IO密集型任务或者混合型任务</font></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">任务的优先级</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">任务的执行时间</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">任务的依赖性</span></li><br></ul><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">性质不同的任务可以用不同规模的线程池分开处理。CPU密集型任务应配置尽可能小的线程，如配置Ncpu+1个线程的线程池。IO密集型任务线程并不会一直在执行任务，应该配置尽可能多的线程，如2*Ncpu。混合型的任务，只要这两个任务执行的时间相差不是太大，那么分解后执行的吞吐量将高于串行执行的吞吐量。如果这昂个任务执行时间相差太大，则没必要进行分解，比如网络请求需要消耗500ms，而计算需要花费10s，这样就没必要拆解了。</p><br><h2 id="hasynctask" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.4em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">AsyncTask</span></h2><br><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">作为Android提供的两个线程间通信的机制（另一个是Handler），用的比较少，讲讲坑吧！</p><br><ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;"><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">AsyncTask跟随Android的版本变动较大，比如他的线程池的corePollSize一会是核心数+1，一会直接改成1</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">虽然内部只有一个线程池，但是却默认创建了一个SerialExecutor，看名字就知道是串行排队执行的，而且其实只是内部维护了一个任务队列，还是使用的线程池的线程去执行任务，坑的就是默认execute使用的就是SerialExecutor，需要调用一个函数才能修改默认采用线程池来执行。</span></li><br><li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">内部还是通过Handler来切换线程到主线程</span></li><br></ul></div>
+
+
+    </div>
+  </div>
+  
+    <div class="copy-right">
+      <div class="markdown-body">
+        <blockquote>
+        
+        
+          本文作者 : ShunHe <br/>
+        
+        原文链接 : <a href="">https://puppiesmeat.github.io/passages/thread/</a><br>
+        版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+        </blockquote>
+      </div>
+    </div>
+  
+  
+  
+    <div class="social-share"
+  style="margin-top: -2rem"
+  data-wechat-qrcode-title="<p>微信扫一扫</p>"
+  data-wechat-qrcode-helper="<p>微信右上角, 扫一扫分享</p>"
+   data-sites="qzone, qq, weibo, wechat, douban, google, facebook, twitter" 
+  
+>
+  <span style="color: #6b7487; font-size: 1.4rem;">分享到: </span>
+</div>
+<script src="https://cdn.bootcss.com/social-share.js/1.0.16/js/social-share.min.js" async>
+  
+
+  
+    <div id="reward">
+  
+    <p id="reward-meta">知识 & 情怀 | 二者兼得</p>
+  
+  <button id="reward-btn">
+    
+    <span>投食</span>
+  </button>
+  <div id="reward-qrcode">
+    
+      <div class="reward-qrcode--container">
+        <img class="qrcode-img" src="/images/wechat.png" alt="微信扫一扫, 向我投食">
+        <p class="qrcode-meta">微信扫一扫, 向我投食</p>
+      </div>
+    
+      <div class="reward-qrcode--container">
+        <img class="qrcode-img" src="/images/alipay.png" alt="支付宝扫一扫, 向我投食">
+        <p class="qrcode-meta">支付宝扫一扫, 向我投食</p>
+      </div>
+    
+  </div>
+
+</div>
+
+<script>
+  (() => {
+    let button = document.querySelector('#reward-btn'),
+      qrcode = document.querySelector('#reward-qrcode'),
+      display = false;
+    
+    button.addEventListener('click', () => {
+      qrcode.style.display = display ? 'none' : 'block'
+      display = !display
+    }, false)
+  })()
+</script>
+  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
+</div>
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
+    
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/passages/hello-world/" target="_self">Hello World</a>
+      </div>
+    
+    
+  </nav>
+
+  
+    <a href="#comment" class="comment-anchor"></a>
+<div class="comment-title"><i class="iconfont icon-footprint"></i> 留下足迹 <i class="iconfont icon-footprint"></i></div>
+<div id="vcomments"></div>
+
+<script defer>
+  if( true ) {
+    let path = getRealPath()
+    new Valine({
+      el: "#vcomments",
+      appId: "6OzfJyOtzJPAnDIyG3E32v5L-gzGzoHsz",
+      appKey: "5Bsc0b9IMYPcCMKadV6eoQEz",
+      notify: false,
+      verify: false,
+      avatar: "robohash",
+      placeholder: "正确填写邮箱, 才能及时收到回复哦♪(^∇^*)",
+      path
+    });
+  }
+</script>
+   
+
+  
+    <script defer>
+const valineAPI = (() => {
+  try {
+    AV.init("6OzfJyOtzJPAnDIyG3E32v5L-gzGzoHsz", "5Bsc0b9IMYPcCMKadV6eoQEz");
+  } catch(error) {}
+  const isExist = (identity) => {
+    identity = identity || getRealPath();
+    let query = new AV.Query('Timer');
+    return new Promise((resolve, reject) => {
+      query.equalTo("identity", identity);
+      query.find().then(results => {
+        resolve(results.length > 0);
+      }, error => reject(error));
+    })
+  }
+
+  const _get = (identity) => {
+    let query = null;
+    if(identity && identity instanceof Array){
+      let querys = [];
+      for(let i = 0; i < identity.length; ++i) {
+        querys[i] = new AV.Query('Timer');
+        querys[i].equalTo('identity', identity[i]);
+      }
+      query = AV.Query.or.apply(null ,querys);
+    } else {
+      identity = identity || getRealPath();
+      query = new AV.Query("Timer");
+      query.equalTo("identity", identity);
+    }
+
+    return new Promise((resolve, reject) => {
+      query.find()
+      .then(results => resolve(results))
+      .catch(error => reject(error))
+    })
+  }
+
+  const create = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+      let Todo = AV.Object.extend('Timer');
+      let todo = new Todo();
+      todo.set("times", 1);
+      todo.set("identity", identity);
+      todo.save().then(res => resolve(true), error => reject(error));
+    })
+  }
+
+  const update = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+      let query = new AV.Query('Timer');
+      query.equalTo("identity", identity);
+      query.find().then(todos => {
+        todos.forEach(todo => {
+          todo.set("times", todo.attributes.times + 1);
+        });
+        return AV.Object.saveAll(todos);
+      }).then(todos => resolve(true), error => reject(error));
+    })
+  }
+
+  return {
+    isExist,
+    _get,
+    update,
+    create
+  }
+})()
+
+const calcAndWriteTimes = () => {
+  let isPost = true;
+
+  let timerAllDOM = document.querySelectorAll(".article-timer");
+
+  if(isPost) {
+    let identity = timerAllDOM[0].getAttribute("data-identity");
+    valineAPI.isExist(identity)
+    .then(exist => {
+      if(exist) {
+        return valineAPI.update(identity);
+      }
+      return new Promise(resolve => resolve(true));
+    })
+    .then( succuess => valineAPI._get(identity))
+    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
+    .catch(error => console.log(error.message))
+    return ;
+  }
+
+  let timerDOMCache = {};
+
+  for(let timerDOM of timerAllDOM) {
+    let identity = timerDOM.getAttribute("data-identity");
+    if(timerDOMCache.hasOwnProperty(identity)){
+      timerDOMCache[identity].dom.push(timerDOM);
+    }else{
+      timerDOMCache[identity] = {
+        dom: [timerDOM],
+        times: undefined
+      };
+    }
+  }
+
+  let identities = Object.keys(timerDOMCache);
+  valineAPI._get(identities).then(results => {
+    for(let result of results) {
+      let {identity, times} = result.attributes;
+      timerDOMCache[identity].times = times;
+      timerDOMCache[identity].dom.map(item => item.innerText = times);
+    }
+    for(let identity of identities) {
+      if(timerDOMCache[identity].times){
+        continue;
+      }
+      timerDOMCache[identity].dom.map(item => item.innerText = 1);
+      valineAPI.create(identity);
+    }
+  }).catch(error => console.log(error.message))
+}
+
+if(true){
+  calcAndWriteTimes();
+}
+</script>
+   
+
+</div>
+
+
+      <footer>
+  <p class="site-info">
+    博客已萌萌哒运行<span id="time-to-now"></span><span class="my-face">(●'◡'●)ﾉ♥</span>
+    <br>
+    Theme - <a href="https://github.com/dongyuanxin/theme-bmw">BMW</a> | Made With 💗 | Powered by <a href="https://puppiesmeat.github.io">ShunHe</a>
+    <br>
+    
+  </p>
+</footer>
+
+
+
+<script>
+const timeToNowDOM = document.querySelector("#time-to-now");
+const startTimestamp = new Date(2019, 1, 20).getTime();
+
+const updateTimeStr = () => {
+  let offset = parseInt(
+      (new Date().getTime() - startTimestamp) / 1000,
+      10
+    ),
+    day = Math.floor(offset / 86400),
+    hour = Math.floor((offset % 86400) / 3600),
+    minute = Math.floor(((offset % 86400) % 3600) / 60),
+    second = Math.floor(((offset % 86400) % 3600) % 60);
+  timeToNowDOM.innerHTML =
+    day + "天" + hour + "小时" + minute + "分钟" + second + "秒";
+  setTimeout(updateTimeStr, 500);
+}
+
+setTimeout(updateTimeStr, 500);
+</script>
+
+
+      <div class="back-to-top hidden">
+  <span>
+    <i class="iconfont icon-60"></i><span></span>%
+  </span>
+</div>
+
+<script>
+const updateIconToTop = percent => {
+  let dom = document.querySelector(".back-to-top span span");
+  dom.innerText = percent;
+  if(percent < 1) {
+    document.querySelector(".back-to-top").className = "back-to-top hidden";
+  } else {
+    document.querySelector(".back-to-top").className = "back-to-top";
+  }
+}
+
+const handleScoll = () => {
+  let isRunning = false;
+  return () => {
+    if (isRunning) return;
+    isRunning = true;
+    window.requestAnimationFrame(timestamp => {
+      let scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop,
+        scrollHeight =
+          document.documentElement.scrollHeight ||
+          document.body.scrollHeight,
+        clientHeight =
+          document.documentElement.clientHeight ||
+          document.body.clientHeight;
+      isRunning = false;
+      if (scrollTop <= 1) {
+        updateIconToTop(0);
+        return;
+      }
+      if (scrollTop + clientHeight >= scrollHeight) {
+        updateIconToTop(100);
+      } else {
+        updateIconToTop(parseInt(
+          100 * scrollTop / (scrollHeight - clientHeight),
+          10
+        ));
+      }
+    });
+  };
+}
+
+const backToTop = () => {
+  let scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop,
+    delay = 10,
+    time = 200;
+  if (scrollTop <= 20) {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    return;
+  }
+  let step = Math.ceil(scrollTop * delay / time);
+  let timer = setInterval(() => {
+    scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollTop - step <= 0) {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      clearInterval(timer);
+    } else {
+      document.documentElement.scrollTop = scrollTop - step;
+      document.body.scrollTop = scrollTop - step;
+    }
+  }, delay);
+}
+
+document.addEventListener("scroll", handleScoll(), false);
+
+document.querySelector(".back-to-top").addEventListener("click", backToTop, false);
+
+</script>
+
+    </div>
+
+    
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<script>
+  (() => {
+    const mathjaxConfig = {
+      showProcessingMessages: false, //关闭js加载过程信息
+      messageStyle: "none", //不显示信息
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]], //行内公式选择符
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]], //段内公式选择符
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"] //避开某些标签
+      },
+      "HTML-CSS": {
+        availableFonts: ["STIX", "TeX"], //可选字体
+        showMathMenu: false //关闭右击菜单显示
+      }
+    }
+
+    let mathjaxInterval = setInterval(() => {
+      if(!window.MathJax){
+        return;
+      }
+      window.MathJax.Hub.Config(mathjaxConfig)
+      window.MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('app')])
+
+      clearInterval(mathjaxInterval)
+    }, 10)    
+  })()
+</script>
+    
+
+    <script src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script>
+<script async>
+  let fancyTimer = setInterval(function(){
+    if(!window.$){
+      return;
+    }
+    $(document).ready(function() {
+      $(".post img").each(function () {
+        if($(this).parent().get(0).tagName.toLowerCase() === "a") {
+          return;
+        }
+        // $(this).attr("data-fancybox", "gallery"); // if you add 'data-fancybox', img will display after showed
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "gallery");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      });
+      
+      clearInterval(fancyTimer);
+    });
+  }, 10);
+</script>
+
+    
+  </body>
+
+</html>
